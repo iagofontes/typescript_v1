@@ -6,7 +6,9 @@ var NegociacaoController = (function () {
     }
     NegociacaoController.prototype.adiciona = function (event) {
         event.preventDefault();
-        var neg = new Negociacao(this._inputData.value, this._inputQuantidade.value, this._inputValor.value);
+        var neg = new Negociacao(new Date(this._inputData.value.replace(/-/g, ',')), 
+        // new Date(this._inputData.value), 
+        parseInt(this._inputQuantidade.value), parseFloat(this._inputValor.value));
         console.log(neg);
     };
     return NegociacaoController;

@@ -1,8 +1,8 @@
 var Negociacao = (function () {
-    function Negociacao(data, quantidade, valor) {
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
+    function Negociacao(_data, _quantidade, _valor) {
+        this._data = _data;
+        this._quantidade = _quantidade;
+        this._valor = _valor;
     }
     Object.defineProperty(Negociacao.prototype, "data", {
         get: function () {
@@ -27,7 +27,7 @@ var Negociacao = (function () {
     });
     Object.defineProperty(Negociacao.prototype, "volume", {
         get: function () {
-            return this._quantidade * this._valor;
+            return (this._quantidade * this._valor);
         },
         enumerable: true,
         configurable: true
