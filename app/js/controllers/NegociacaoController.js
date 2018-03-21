@@ -10,13 +10,10 @@ var NegociacaoController = (function () {
     }
     NegociacaoController.prototype.adiciona = function (event) {
         event.preventDefault();
-        var neg = new Negociacao(new Date(this._inputData.value.replace(/-/g, ',')), 
-        // new Date(this._inputData.value), 
-        parseInt(this._inputQuantidade.value), parseFloat(this._inputValor.value));
+        var neg = new Negociacao(new Date(this._inputData.value.replace(/-/g, ',')), parseInt(this._inputQuantidade.value), parseFloat(this._inputValor.value));
         this._negociacoes.adiciona(neg);
         this._negociacoesView.update(this._negociacoes);
         this._mensagemView.update('Negociação atualizada com sucesso.');
-        // console.log(neg);
     };
     return NegociacaoController;
 }());
